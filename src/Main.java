@@ -17,7 +17,7 @@ public class Main {
 			String[] logs = new String[4];
 
 			Scanner eingabe = new Scanner(System.in);
-			String [] ballDetails = new String [5];
+			String[] ballDetails = new String[5];
 			while (true) {
 				for (int i = 0; i < 4; i++) {
 					logs[i] = in.readLine();
@@ -25,14 +25,14 @@ public class Main {
 					// ball == 2
 
 					if (i == 2) {
-						 ballDetails = logs[i].split(" ");
+						ballDetails = logs[i].split(" ");
 						System.out.println(logs[2]);
 					}
-					
+
 				}
 				// System.out.println("Bitte MOVE COMMAND eingeben");
-				//int moveTO = Integer.parseInt(eingabe.nextLine());
-				//out.println("move " + moveTO);
+				// int moveTO = Integer.parseInt(eingabe.nextLine());
+				// out.println("move " + moveTO);
 				movePaddle(eingabe, out, ballDetails);
 
 			}
@@ -45,29 +45,16 @@ public class Main {
 	}
 
 	public static void movePaddle(Scanner eingabe, PrintWriter out, String[] ballData) {
-		System.out.println("Ball x-Position" + ballData[1]);
-		System.out.println("Ball y-Position" + ballData[2]);
-		System.out.println("Ball x-Speed" + ballData[3]);
-		System.out.println("Ball y-Speed" + ballData[4]);
+
+		int xPOS = (int) Double.parseDouble(ballData[3]);
+		int yPOS = (int) Double.parseDouble(ballData[4]);
 		int xSpeed = (int) Double.parseDouble(ballData[3]);
 		int ySpeed = (int) Double.parseDouble(ballData[4]);
 
 		int moveTo = 0;
-		if (xSpeed > 0) {
-			moveTo = 36;
-
-		} else {
-			if (ySpeed == 0) {
-				moveTo = 0;
-
-			} else if (ySpeed > 0) {
-				moveTo = 36;
-
-			} else {
-				moveTo = -36;
-			}
-			
-		}
+		moveTo = (int) yPOS * ySpeed /2;
 		out.println("move " + moveTo);
+		
+		
 	}
 }
