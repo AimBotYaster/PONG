@@ -31,8 +31,8 @@ public class Main {
 					
 				}
 				// System.out.println("Bitte MOVE COMMAND eingeben");
-				int moveTO = Integer.parseInt(eingabe.nextLine());
-				out.println("move " + moveTO);
+				//int moveTO = Integer.parseInt(eingabe.nextLine());
+				//out.println("move " + moveTO);
 				movePaddle(eingabe, out, ballDetails);
 
 			}
@@ -66,7 +66,8 @@ public class Main {
 			} else {
 				moveTo = -36;
 			}
-			out.println("move " + moveTo);
+			
 		}
+		out.println("move " + moveTo);
 	}
 }
